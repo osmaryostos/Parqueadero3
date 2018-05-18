@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.parqueadero2.gradle3.ParqueaderoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-05-15T20:27:34" hostname="OSMARY-OSTOS" time="0.002">
+  <properties/>
+  <testcase name="ProbarCapacidad" classname="com.parqueadero2.gradle3.ParqueaderoTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
