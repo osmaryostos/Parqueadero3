@@ -6,20 +6,20 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-
+import com.parqueadero2.gradle3.Constantes;
 
 
 
 public class Parqueadero {
 
 	public static void main(String[] args) {		
-		boolean retorno;
+		
 		int valor_scan;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Ingresar nuevo (1), Salir (0)");
 		valor_scan =  Integer.parseInt(scan.nextLine());
 		while(valor_scan != 0) {
-			retorno = Ingreso();
+			boolean retorno = Ingreso();
 			System.out.println("Ingresar otro vehiculo?: Si(1), No(0) ");
 			valor_scan = Integer.parseInt(scan.nextLine());
 		}
@@ -32,8 +32,7 @@ public class Parqueadero {
 		
 		int cilindraje, hora_llegada, hora_salida;
 		Integer tipo;
-		String placa, color;
-		int valor_scan;
+		String placa, color;		
 		Boolean cap;
 		Scanner scan = new Scanner(System.in);
 		ArrayList<Vehiculo> vehiculos = new ArrayList<>();
@@ -83,12 +82,12 @@ public class Parqueadero {
 	         Vehiculo element = itr.next();
 	         if(element.getLlantas() == 2 ){
 	        	 moto++;
-	        	 if( moto > element.MAX_MOTO){
+	        	 if( moto > Constantes.MAX_MOTO){
 	        		 return false;
 	        	 }
 	         }else{
 	        	carro++;
-	        	if( carro > element.MAX_CARRO){
+	        	if( carro > Constantes.MAX_CARRO){
 	        		 return false;
 	        	 }
 	         }

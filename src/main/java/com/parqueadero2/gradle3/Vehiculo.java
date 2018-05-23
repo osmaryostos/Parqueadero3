@@ -1,21 +1,35 @@
 package com.parqueadero2.gradle3;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Vehiculo {
-	static final int MAX_MOTO = 1;
-	static final int MAX_CARRO = 2;
-	static final int HORA_CARRO = 1000;
-	static final int HORA_MOTO = 500;
-	static final int DIA_MOTO = 4000;
-	static final int DIA_CARRO = 8000;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table (name = "VEHICULO") //tambien puede dejarse por defecto y quedara en tabla vehiculo
+public class Vehiculo implements Serializable  {
+	
+	private static final long serialVersionUID = -3009157732242241606L;
+	
+	@Column(name="TIPO", nullable = false)
 	private int llantas;
+	
+	@Id
+	@Column(name="PLACA", nullable = false)
 	private String placa;
+	@Column(name="COLOR")
 	private String color;
+	@Column(name="CILINDRAJE")
 	private int cilindraje;
+	@Column(name="H_LLEGADA", nullable = false)
 	private int h_llegada;
+	@Column(name="H_SALIDA")
 	private int h_salida;	
 
 	public int getH_llegada() {
@@ -64,10 +78,11 @@ public class Vehiculo {
 		this.placa = placa;
 		this.color = color;
 		this.cilindraje = cilindraje;
-		this.h_llegada = h_llegada;
+		this.h_llegada = h_entrada;
 		this.h_salida = h_salida;
 	}
-
+	public Vehiculo(){}
+	
 	public String getColor() {
 		return color;
 	}

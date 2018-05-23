@@ -11,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.GET;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
+import com.parqueadero2.gradle3.Constantes;
 
 
 
@@ -100,12 +101,12 @@ public class ParqueaderoWeb {
 	         Vehiculo element = itr.next();
 	         if(element.getLlantas() == 2 ){
 	        	 moto++;
-	        	 if( moto > element.MAX_MOTO){
+	        	 if( moto > Constantes.MAX_MOTO){
 	        		 return false;
 	        	 }
 	         }else{
 	        	carro++;
-	        	if( carro > element.MAX_CARRO){
+	        	if( carro > Constantes.MAX_CARRO){
 	        		 return false;
 	        	 }
 	         }
